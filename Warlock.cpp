@@ -60,8 +60,10 @@ void	Warlock::learnSpell(ASpell *spell)
 	if (!spell)
 		return ;
 	std::vector<ASpell*>::iterator it;
+//	static int i = 0;
 	for (it = vect.begin(); it != vect.end(); it++)
 	{
+//		std::cout << "\nJe passe " << (i += 1) << " fois dans la boucle\n\n";
 		if ((*it)->getName() == spell->getName())
 			return ;
 	}
@@ -93,7 +95,6 @@ void	Warlock::launchSpell(const std::string &spellname, const ATarget & target)
 	}
 }
 
-/*
 int main()
 {
 	Warlock richard("Richard", "the Titled");
@@ -109,4 +110,3 @@ int main()
 	richard.forgetSpell("Fwoosh");
 	richard.launchSpell("Fwoosh", bob);
 }
-*/
